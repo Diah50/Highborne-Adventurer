@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/Action.gd" type="Script" id=1]
+
+
+
+
+
+
+
+[node name="Action" type="Node2D" groups=[
+"Action",
+]]
+script = ExtResource( 1 )

@@ -1,0 +1,3 @@
+# rotation and no_rot
+#
+# ai movement behavior - desired range, random
