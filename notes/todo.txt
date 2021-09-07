@@ -1,3 +1,9 @@
-# rotation and no_rot
-#
-# ai movement behavior - desired range, random
+dealing damage
+
+delay between combos
+
+each enemy can only take 1 dmg from an attack
+
+rotation and no_rot
+
+ai movement behavior - desired range, random

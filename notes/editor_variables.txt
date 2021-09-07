@@ -1,0 +1,49 @@
+Unit:
+
+Player			Whether this unit is the player. There should only be one player.
+Move_Speed 		Self-explantory.
+Max Hp			Self-explantory.
+Color			Self-explanatory.
+
+
+
+Action:
+
+Key			What key this action is bound to when a child of a player unit. 
+			Valid keys are listed under GlobalScope.KeyList, 
+			https://docs.godotengine.org/en/3.4/classes/class_@globalscope.html
+Arc			Angle of the damage arc in degrees.
+Range			Range of the damage arc.
+AI Start Range		Maximum range at which the AI will atetempt this move.
+AI Weight		Relative chance for AI to pick this move over others.
+Combo Actions		A list of actions that can be performed quickly after this one as a combo.
+Combo Only		If true, this action can only be performed as the second or later action in a combo.
+Dmg			How much damage this attack deals.
+Move Speed		Overrides the move speed of the unit for the duration of the action.
+
+Stun, Stun Duration, Guard
+When an action is performed the unit's guard is (re)set to the action's guard value.
+Every stun damage dealt will reduce this value.
+If the value reaches zero and the unit is hit by an attack with stun duration, 
+it will cancel its action and be unable to act for the stun duration.
+If a unit that is already stunned is stunned again, only the longer duration will be considered.
+
+
+Phase Times, Phase Flags
+
+An action has one or more phases. 
+The phase times array is how many ticks (60ths of a second) each phase lasts.
+The phase flags array is what flags are applied to that phase. Each phase can have any of the below flags turned on or off.
+Flags:
+damage and stun			Damage and stun is applied. A cone appears indicating where the action will hit.
+move speed			The unit's move speed is changed to that of the action.
+guard				The unit may resist enemy stun if their guard value is high enough.
+invincibility			The unit will completely ignore enemy action's damage and stun.
+telegraph 			A cone appears indicating where the action will hit.
+lock_pos			The action's hitbox will not follow the unit, e.g. for a bomb.
+no_rot				The unit will be unable to rotate, making the move easier to dodge.
+
+
+Colors
+Hitbox Border Color and Hitbox Color are both part of the cone when the telegraph flag is applicable.
+Damage is part of the cone when the damage and stun flag is aplicable.
